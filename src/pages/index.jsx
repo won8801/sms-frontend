@@ -16,7 +16,7 @@ const PAGES = {
     AdminSettings: AdminSettings,
     Dashboard: Dashboard,
     SendSMS: SendSMS,
-}
+};
 
 function _getCurrentPage(url) {
     if (url.endsWith('/')) {
@@ -38,8 +38,8 @@ function PagesContent() {
     
     return (
         <Layout currentPageName={currentPage}>
-            <Routes>            
-                <Route path="/" element={<Contacts />} />
+            <Routes>
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/Contacts" element={<Contacts />} />
                 <Route path="/History" element={<History />} />
                 <Route path="/AdminUsers" element={<AdminUsers />} />
