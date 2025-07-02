@@ -37,3 +37,17 @@ export async function fetchHistory() {
     return [];
   }
 }
+
+// ✅ 임시 파일 업로드 함수 (빌드 에러 방지용)
+export async function UploadFile(file) {
+  console.log("UploadFile 호출됨:", file);
+  // 추후 실제 파일 업로드 로직으로 교체 가능
+  return { success: true, message: "파일 업로드 성공 (모의 응답)" };
+}
+
+// ✅ 임시 데이터 추출 함수 (BulkContactUploadDialog.jsx에서 요구할 수 있음)
+export function ExtractDataFromUploadedFile(file) {
+  console.log("ExtractDataFromUploadedFile 호출됨:", file);
+  // 나중에 실제 Excel/CSV 파싱 로직 추가
+  return [{ name: "홍길동", phone: "01012345678" }];
+}
