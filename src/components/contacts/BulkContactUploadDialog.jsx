@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-  DialogClose,
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -73,10 +68,7 @@ export default function BulkContactUploadDialog({ isOpen, onClose, onSubmit }) {
         }
       };
       
-      const result = await ExtractDataFromUploadedFile({
-        file_url,
-        json_schema: schema
-      });
+      const result = await ExtractDataFromUploadedFile({ file_url, json_schema: schema });
       
       if (result.status === 'success' && result.output) {
         const contacts = result.output.map(contact => ({
@@ -139,8 +131,7 @@ export default function BulkContactUploadDialog({ isOpen, onClose, onSubmit }) {
                 <Textarea
                   value={pasteData}
                   onChange={(e) => setPasteData(e.target.value)}
-                  placeholder="홍길동	821012345678	KR	고객	VIP;마케팅
-김철수	821098765432	KR	직원	내부"
+                  placeholder="홍길동\t821012345678\tKR\t고객\tVIP;마케팅\n김철수\t821098765432\tKR\t직원\t내부"
                   className="min-h-48 font-mono text-sm"
                 />
               </div>
